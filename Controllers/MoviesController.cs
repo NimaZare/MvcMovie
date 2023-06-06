@@ -24,11 +24,8 @@ namespace MvcMovie.Controllers
             }
 
             // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Movie
-                                            orderby m.Genre
-                                            select m.Genre;
-            var movies = from m in _context.Movie
-                         select m;
+            IQueryable<string> genreQuery = from m in _context.Movie orderby m.Genre select m.Genre;
+            var movies = from m in _context.Movie select m;
 
             if (!string.IsNullOrEmpty(searchString))
             {
